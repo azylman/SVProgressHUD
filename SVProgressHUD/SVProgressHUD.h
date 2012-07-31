@@ -32,16 +32,13 @@ typedef NSUInteger SVProgressHUDMaskType;
 // stops the activity indicator, shows a glyph + status, and dismisses HUD 1s later
 + (void)showSuccessWithStatus:(NSString*)string;
 + (void)showErrorWithStatus:(NSString *)string;
++ (void)showSuccessWithStatus:(NSString *)string duration:(NSTimeInterval)duration;
++ (void)showErrorWithStatus:(NSString *)string duration:(NSTimeInterval)duration;
 + (void)showImage:(UIImage*)image status:(NSString*)status; // use 28x28 white pngs
 
 + (void)dismiss;
 
 + (BOOL)isVisible;
-
-
-// deprecated June 9th; custom durations encourages uncessarily long status strings (inappropriate, use UIAlertView instead)
-+ (void)showSuccessWithStatus:(NSString *)string duration:(NSTimeInterval)duration DEPRECATED_ATTRIBUTE;
-+ (void)showErrorWithStatus:(NSString *)string duration:(NSTimeInterval)duration DEPRECATED_ATTRIBUTE;
 
 // deprecated June 9th; use the showWithSuccess/Error methods instead
 + (void)dismissWithSuccess:(NSString*)successString DEPRECATED_ATTRIBUTE; 
